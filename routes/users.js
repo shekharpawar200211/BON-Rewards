@@ -26,12 +26,9 @@ router.post("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    console.log("id", id);
 
     const stmt = db.prepare("SELECT * FROM users WHERE id = ?");
-    console.log(stmt);
     const row = stmt.get(id);
-    console.log(row);
 
     if (!row) {
       return res.status(404).json({ error: "User not found" });

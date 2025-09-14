@@ -1,5 +1,4 @@
 import express from "express";
-import { db } from "./db.js";
 import registerRoutes from "./routes/routes.js";
 
 const app = express();
